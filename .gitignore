@@ -1,3 +1,11 @@
 .vscode
 .mypy_cache
 docker-stack.yml
+
+.idea
+
+# Terraform and terragrunt
+*.tfstate*
+*.tfplan
+.terraform/
+terraform.tfvars
