@@ -28,3 +28,8 @@ variable "public_key_path" {}
 variable "aws_region" {
   default = "us-west-2"
 }
+
+variable "publicly_accessible" {
+  type = bool
+  default = true
+}
