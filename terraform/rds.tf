@@ -48,6 +48,8 @@ module "db" {
   identifier = var.id
   name       = var.name
 
+  publicly_accessible = var.publicly_accessible
+
   engine               = "postgres"
   engine_version       = "9.6.9"
   family               = "postgres9.6"
