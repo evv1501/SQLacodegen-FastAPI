@@ -76,6 +76,7 @@ services:
       - .env
     environment:
       - PGDATA=/var/lib/postgresql/data/pgdata
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
     deploy:
       placement:
         constraints:
@@ -190,6 +191,9 @@ services:
         - traefik.constraint-label-stack=${TRAEFIK_TAG?Variable not set}
         - traefik.http.routers.${STACK_NAME?Variable not set}-frontend-http.rule=PathPrefix(`/`)
         - traefik.http.services.${STACK_NAME?Variable not set}-frontend.loadbalancer.server.port=80
+    ports:
+      - '5432:5432'
+
 
 volumes:
   app-db-data:
